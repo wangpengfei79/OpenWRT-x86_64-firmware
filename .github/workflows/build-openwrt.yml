@@ -35,7 +35,7 @@ env:
 
 jobs:
   build:
-    runs-on: debian-11
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
@@ -43,6 +43,7 @@ jobs:
 
     - name: Initialization environment
       env:
+        TZ: Asia/Shanghai
         DEBIAN_FRONTEND: noninteractive
       run: |
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
